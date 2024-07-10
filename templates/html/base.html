@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!--mobile-->
+
+    <link rel="icon" type="image/x-icon" href="https://maxon-vrn.github.io/appartment_vrn/static/img/favicon.ico"> <!--фавикон в меню-->
+
+
+    <link type = 'text/css' rel="stylesheet" href="templates/css/style.css"/> <!--путь указываем относительно папки static для подключения стилей css-->
+    <title>
+        {% block title %}
+        {% endblock title %}
+    </title>
+
+    {% block header %} <!--возможность присутствия и подключения блока в хеадер на любой странице-->
+
+    {% endblock header %}
+</head>
+<body>
+    <h1>
+        Hi men
+    </h1>
+
+
+        {% block content %}
+
+        {% endblock content %}
+
+
+
+<!--в футере прописать ссылки меню и соц сети(телеграм для быстрого заказа и номер телефона)-->
+<!--информация об авторстве и сотрудничестве-->
+        {% include "footer.html" %}
+</body>
+</html>
