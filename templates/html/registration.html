@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block header %}
+<title>Регистрация</title>
+{% endblock header %}
+
+
+
+{% block content %}
+
+
+
+<img align="center" style="margin-left:46%;margin-top: 4%" id="" class="site-logo" src="/images/Green_logo.png"  alt="logo company">
+
+<table align="center" style="width:30%;margin-top: 6%;">
+  <tr>
+    <caption>Выберите кто вы? Выберите вашу роль!</caption>
+  </tr>
+  <tr>
+    <td colspan="2" align="center">
+      <button><a href="registration_organization" type="submit" value="Организация">Организация</a></button>
+      <button><a href="registration_employee" type="submit" value="Сотрудник организации">Сотрудник организации</a></button>
+    </td>
+  </tr>
+</table>
+
+{% endblock content %}
+

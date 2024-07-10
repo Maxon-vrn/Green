@@ -16,8 +16,9 @@ class ModelName(str, Enum): #перечень страниц
 app = FastAPI()
 
 templates = Jinja2Templates(directory="templates/html")   #есть подозрения что не работает расширение и наследования шаблонизатора,тк он не понимает где файлы хранятся!!!
-app.mount("/templates", StaticFiles(directory="templates/html"), name="static")    #подключение директории для статических шаблонов
+app.mount("/templates", StaticFiles(directory="templates"), name="static")    #подключение директории для статических шаблонов
 app.mount("/images", StaticFiles(directory="templates/images"), name="images")
+
 
 dogs= [{'static': '1', 'templates': '2'}]
 
@@ -36,12 +37,28 @@ async def get_model(model_name: ModelName):
 
 @app.get('/')
 async def first_page(request: Request):
-    return templates.TemplateResponse("index.html",{'request':request})
+    return templates.TemplateResponse("come_in.html",{'request':request})
 
 @app.get('/base')
 async def first_page():
     return FileResponse("templates/html/base.html")
 
+#----------------------Registration------------------------------------------
+@app.get('/registration')
+async def first_page(request: Request):
+    return templates.TemplateResponse("registration.html",{'request':request})
+@app.get('/registration_organization')
+async def first_page(request: Request):
+    return templates.TemplateResponse("registration_organization.html",{'request':request})
+
+@app.get('/registration_employee')
+async def first_page(request: Request):
+    return templates.TemplateResponse("registration_employee.html",{'request':request})
+
+#----------------------stop Registration------------------------------------------
+@app.get('/lost_password')
+async def first_page(request: Request):
+    return templates.TemplateResponse("lost_password.html",{'request':request})
 
 @app.get('/contact')    #подключили джинжу для данных
 async def contact_page(request: Request):
