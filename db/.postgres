@@ -1,0 +1,7 @@
+psql -h localhost -U postgres
+    ALTER USER postgres with password 'postgres';
+
+sudo passwd postgres
+    введен пароль - postgres
+
+green db - password -"postgres"
